@@ -8,13 +8,8 @@ export const getBooksBySearch = async (searchTerm, maxResults = 10) => {
 
     const data = await response.json();
     const { items } = data;
-    if (items.length < 1) {
+    if (data.totalItems < 1) {
         throw new Error("No books found for search term " + searchTerm);
     }
-    // console.log(items);
-    // console.log(maxResults);
-    // console.log(items.volumeInfo);
-    // console.log(items[0].volumeInfo.imageLinks);
-
     return items;
 };

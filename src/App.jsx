@@ -6,7 +6,7 @@ import { useState } from "react";
 function App() {
     const [searchValue, setSearchValue] = useState("");
     return (
-        <div>
+        <div className="main">
             <SearchBar onSearch={(value) => setSearchValue(value)} />
             <LoadBooks searchTerm={searchValue} />
         </div>

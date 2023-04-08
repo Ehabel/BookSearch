@@ -25,7 +25,6 @@ const LoadBooks = ({ searchTerm }) => {
     }, [resultsNum, searchTerm]);
     return (
         <div>
-            {/* <ResultsNum onChange={(value) => setresultsNum(value)} /> */}
             <form>
                 <div>
                     <label htmlFor="maxResults">Results per Page: </label>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import styles from "./SearchBar.module.scss";
+import searchLogo from "../../assets/search.svg";
 
 const SearchBar = ({ onSearch }) => {
     const [input, setInput] = useState("");
@@ -13,9 +15,17 @@ const SearchBar = ({ onSearch }) => {
         setInput("");
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <input onChange={onInputChange} type="text" value={input} />
-            <button type="submit">Search</button>
+        <form className={styles.card} onSubmit={handleSubmit}>
+            <input
+                className={styles.card__searchbar}
+                onChange={onInputChange}
+                type="text"
+                value={input}
+            />
+            <button type="submit">
+                {" "}
+                <img className={styles.card__logo} src={searchLogo} alt="" />
+            </button>
         </form>
     );
 };
