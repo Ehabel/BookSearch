@@ -1,12 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import SearchBar from "./components/SearchBar/SearchBar";
+import LoadBooks from "./containers/LoadBooks";
+import { useState } from "react";
 
 function App() {
-    const [count, setCount] = useState(0);
-
-    return <div className="App"></div>;
+    const [searchValue, setSearchValue] = useState("");
+    return (
+        <div>
+            <SearchBar onSearch={(value) => setSearchValue(value)} />
+            <LoadBooks searchTerm={searchValue} />
+        </div>
+    );
 }
 
 export default App;
