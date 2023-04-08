@@ -18,7 +18,11 @@ const LoadBooks = ({ searchTerm }) => {
 
     useEffect(() => {
         if (searchTerm !== "") {
-            getBooks(searchTerm, resultsNum);
+            setLoading(true);
+            setError(null);
+            getBooks(searchTerm, resultsNum)
+                .catch((error) => setError(error))
+                .finally(() => setLoading(false));
         }
     }, [resultsNum, searchTerm]);
     return (
@@ -39,7 +43,12 @@ const LoadBooks = ({ searchTerm }) => {
                     </select>
                 </div>
             </form>
-            {loading && <p>...loading</p>}
+            {loading && (
+                <div>
+                    <p>...loading</p>
+                    <BookList books={books} />
+                </div>
+            )}
             {!loading && error && <p>{error.message}</p>}
             {!loading && books.length > 0 && <BookList books={books} />}
         </div>
