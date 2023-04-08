@@ -12,15 +12,13 @@ const LoadBooks = ({ searchTerm }) => {
         setresultsNum(e.target.value);
     };
 
+    const getBooks = async (searchTerm, resultsNum) => {
+        setBooks(await getBooksBySearch(searchTerm, resultsNum));
+    };
+
     useEffect(() => {
         if (searchTerm !== "") {
-            setLoading(true);
-            setBooks([]);
-            setError(null);
-            getBooksBySearch(searchTerm, resultsNum)
-                .then((books) => setBooks(books))
-                .catch((error) => setError(error))
-                .finally(() => setLoading(false));
+            getBooks(searchTerm, resultsNum);
         }
     }, [resultsNum, searchTerm]);
     return (

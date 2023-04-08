@@ -7,7 +7,9 @@ function App() {
     const [searchValue, setSearchValue] = useState("");
     return (
         <div className="main">
-            <SearchBar onSearch={(value) => setSearchValue(value)} />
+            <div>
+                <SearchBar onSearch={(value) => setSearchValue(value)} />
+            </div>
             <LoadBooks searchTerm={searchValue} />
         </div>
     );
