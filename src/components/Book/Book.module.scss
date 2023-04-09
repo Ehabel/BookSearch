@@ -21,7 +21,7 @@
         }
         &_title {
             font-weight: bold;
-            height: 70%;
+            height: 50%;
             margin-top: 0;
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -53,6 +53,16 @@
             &_paragraph {
                 display: block;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .card {
+        width: fit-content;
+        height: fit-content;
+        &_text {
+            display: none;
         }
     }
 }

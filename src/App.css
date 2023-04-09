@@ -2,9 +2,32 @@
     width: 100vw;
     text-align: center;
 }
+
 .main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.main__child__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__child__para {
+    padding: 5px;
+    margin-bottom: 1px;
+}
+
+.searchbar {
+    width: fit-content;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

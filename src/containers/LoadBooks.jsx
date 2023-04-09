@@ -29,10 +29,10 @@ const LoadBooks = ({ searchTerm }) => {
         <div>
             <form>
                 <div>
-                    <label htmlFor="maxResults">Results per Page: </label>
+                    <label htmlFor="resultsGenerated">Results per Page: </label>
                     <select
-                        name="maxResults"
-                        id="maxResults"
+                        name="resultsGenerated"
+                        id="resultsGenerated"
                         defaultValue="10"
                         onChange={changeMax}
                     >
