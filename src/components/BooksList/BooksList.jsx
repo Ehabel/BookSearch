@@ -17,6 +17,7 @@ const BookList = ({ books }) => {
                                 ? result.volumeInfo.imageLinks.thumbnail
                                 : "N/A"
                         }
+                        book={result}
                     />
                 ))}
             </div>

@@ -3,7 +3,7 @@ import styles from "./Book.module.scss";
 import { useState } from "react";
 import BookModal from "../BookModal/BookModal.jsx";
 
-const Book = ({ title, authors, description, thumbnail, onClick }) => {
+const Book = ({ title, authors, description, thumbnail, book }) => {
     const [openModal, setopenModal] = useState(false);
     const openModalView = () => {
         setopenModal(true);
@@ -11,10 +11,6 @@ const Book = ({ title, authors, description, thumbnail, onClick }) => {
     const closeModalView = () => {
         setopenModal(false);
     };
-    const outsideModal = document.querySelector(".main__child");
-    outsideModal.addEventListener("click", () => {
-        if (openModal) closeModalView();
-    });
     return (
         <>
             <div className={styles.card} onClick={openModalView}>
@@ -36,6 +32,7 @@ const Book = ({ title, authors, description, thumbnail, onClick }) => {
                     description={description}
                     thumbnail={thumbnail}
                     onChange={closeModalView}
+                    book={book}
                 />
             ) : (
                 <></>

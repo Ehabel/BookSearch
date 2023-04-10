@@ -4,9 +4,18 @@
     align-items: center;
     position: fixed;
     top: 0;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.outsideModal {
+    position: fixed;
+    top: 0;
     min-width: 100%;
     min-height: 100%;
     background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
 }
 
 .card {
@@ -16,7 +25,7 @@
     margin: 15px;
     border-radius: 10px;
     background-color: #660708;
-    width: 20vw;
+    width: 30vw;
     max-height: 60vh;
     &_image {
         width: 140px;
@@ -37,10 +46,23 @@
         &_authors {
             font-style: italic;
         }
-        &_paragraph {
-            margin-top: 0;
+
+        &_container {
+            display: grid;
+            grid-template-columns: 30% auto;
+            margin: 15px;
+            column-gap: 50px;
+            position: relative;
+            text-align: left;
+            &_header {
+                font-weight: bold;
+            }
         }
     }
+}
+
+a {
+    margin: 16px 0 16px 0;
 }
 
 @media only screen and (max-width: 950px) {
