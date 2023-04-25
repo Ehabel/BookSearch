@@ -15,14 +15,16 @@ const Book = ({ title, authors, description, thumbnail, book }) => {
         <>
             <div className={styles.card} onClick={openModalView}>
                 <img
-                    className={styles.card_image}
+                    className={styles.card__image}
                     src={thumbnail}
                     alt={title}
                 />
-                <div className={styles.card_text}>
-                    <p className={styles.card_text_title}>{title}</p>
-                    <p className={styles.card_text_authors}>By: {authors}</p>
-                    <p className={styles.card_text_paragraph}>{description}</p>
+                <div className={styles.card__text}>
+                    <p className={styles.card__text__title}>{title}</p>
+                    <p className={styles.card__text__authors}>By: {authors}</p>
+                    <p className={styles.card__text__paragraph}>
+                        {description}
+                    </p>
                 </div>
             </div>
             {openModal ? (

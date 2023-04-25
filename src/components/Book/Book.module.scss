@@ -8,14 +8,14 @@
     border-radius: 10px;
     background-color: #660708;
 
-    &_image {
+    &__image {
         width: 140px;
         height: 224px;
     }
-    &_text::-webkit-scrollbar {
+    &__text::-webkit-scrollbar {
         display: none;
     }
-    &_text {
+    &__text {
         padding: 5px;
         margin: 15px;
         -ms-overflow-style: none;
@@ -23,18 +23,18 @@
         overflow-y: scroll;
         text-align: left;
 
-        &_title {
+        &__title {
             font-weight: bold;
             // height: 50%;
             margin-top: 0;
         }
-        &_authors {
+        &__authors {
             font-style: italic;
         }
-        &_paragraph::-webkit-scrollbar {
+        &__paragraph::-webkit-scrollbar {
             display: none;
         }
-        &_paragraph {
+        &__paragraph {
             margin-top: 0;
             display: none;
             -ms-overflow-style: none;
@@ -44,14 +44,14 @@
         }
     }
     :hover > & {
-        &_text {
-            &_title {
+        &__text {
+            &__title {
                 display: none;
             }
-            &_authors {
+            &__authors {
                 display: none;
             }
-            &_paragraph {
+            &__paragraph {
                 display: block;
             }
         }
@@ -62,7 +62,7 @@
     .card {
         width: fit-content;
         height: fit-content;
-        &_text {
+        &__text {
             display: none;
         }
     }
